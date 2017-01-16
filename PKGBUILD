@@ -30,7 +30,6 @@ package() {
   cd $srcdir
   install -Dm644 telegraf.sysusers "$pkgdir/usr/lib/sysusers.d/telegraf.conf"
   install -Dm644 telegraf.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/telegraf.conf"
-  install -Dm644 telegraf.service "$pkgdir/usr/lib/systemd/system/telegraf.service"
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/telegraf/LICENSE"
 
   cd telegraf
