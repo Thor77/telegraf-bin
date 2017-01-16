@@ -33,4 +33,5 @@ package() {
   cd telegraf
   install -Dm755 usr/bin/telegraf "$pkgdir/usr/bin/telegraf"
   install -Dm644 etc/telegraf/telegraf.conf "$pkgdir/etc/telegraf/telegraf.conf"
+  install -Dm644 etc/logrotate.d/telegraf "$pkgdir/etc/logrotate.d/telegraf"
 }
