@@ -7,6 +7,7 @@ pkgdesc="An open source agent for collecting metrics and data on the system; Bin
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url="https://www.influxdata.com/time-series-platform/telegraf/"
 license=('MIT')
+conflicts=('telegraf')
 backup=('etc/telegraf/telegraf.conf')
 install=telegraf.install
 
