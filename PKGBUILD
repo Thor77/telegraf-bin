@@ -1,4 +1,5 @@
 # Maintainer: Thor77 <thor77 at thor77 dot org>
+# Contributor: Sebastian Krebs <sebastian[at]krebs[dot]one>
 
 pkgname=telegraf-bin
 pkgver=1.1.2
