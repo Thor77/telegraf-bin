@@ -3,7 +3,7 @@
 
 pkgname=telegraf-bin
 pkgver=1.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="An open source agent for collecting metrics and data on the system; Binary release"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url="https://www.influxdata.com/time-series-platform/telegraf/"
