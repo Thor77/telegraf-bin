@@ -1,0 +1,33 @@
+name: test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-test-container:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: thor77
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ghcr.io/thor77/telegraf-bin:latest
+  run-test-container:
+    needs: build-test-container
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/thor77/telegraf-bin:latest
+    steps:
+      - run: diff <(makepkg --printsrcinfo) .SRCINFO
+      - run: /usr/bin/telegraf --test >/dev/null
