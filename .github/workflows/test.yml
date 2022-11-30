@@ -25,8 +25,9 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ env.GITHUB_REF }},${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.IMAGE_NAME }}:latest
   run-test-container:
+    needs: build-test-container
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/thor77/telegraf-bin:latest
