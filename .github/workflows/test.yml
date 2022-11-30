@@ -9,13 +9,6 @@ env:
   IMAGE_NAME: ${{ github.repository }}
   IMAGE_TAG: ${{ github.branch }}
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ludeeus/action-shellcheck@master
-        with:
-          additional_files: 'telegraf.install entrypoint.sh'
   build-test-container:
     runs-on: ubuntu-latest
     permissions:
